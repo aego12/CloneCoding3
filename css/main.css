@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@350;700&display=swap');
+
 /* ===================================
    #wrap
    =================================== */
@@ -16,113 +18,80 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 1740px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 91px;
     z-index: 100;
     box-sizing: border-box;
     background: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* #header .inner */
 #header .inner {
-    width: 1200px;
+    width: min(1180px, 100%);
     height: 100%;
-    display: flex;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 180px minmax(0, 800px) 180px;
     align-items: center;
-    justify-content: space-between;
-    background: pink;
 }
 
-/* #header h1 - 로고 */
-#header h1 {
-    flex-shrink: 0;
-}
-
-#header h1 a {
-    display: block;
-}
-
-#header h1 a img {
-    height: 28px;
-    display: block;
-}
-
-/* #header .nav - 내비게이션 */
-#header .nav {
-}
-
-#header .nav .gnb {
-    display: flex;
-    gap: 130px;
-}
-
-#header .nav .gnb li {
-}
-
+#header h1 a { display: block; width: 110px; }
+#header h1 a img { display: block; width: 110px; height: 47px; }
+#header .nav .gnb { display: grid; grid-template-columns: repeat(4, 1fr); }
+#header .nav .gnb li { text-align: center; }
 #header .nav .gnb li a {
-    color: #333;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
-}
-
-#header .nav .gnb li a:hover {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-/* #header .util - 유틸 영역 (언어, 햄버거) */
-#header .util {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-shrink: 0;
-}
-
-#header .util .lang {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
-}
-
-#header .util .lang.active {
-    color: #333;
-    font-weight: 600;
-}
-
-#header .util .lang:hover {
-    color: #333;
-}
-
-#header .util .hamburger {
-    width: 30px;
-    height: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0;
-    margin-left: 10px;
-}
-
-#header .util .hamburger span {
     display: block;
-    width: 100%;
-    height: 2px;
-    background: #333;
-    border-radius: 1px;
-    transition: all 0.3s;
+    padding: 29px 0 31px;
+    color: #222;
+    font-size: 18px;
+    line-height: 30.6px;
+    font-weight: 700;
+    white-space: nowrap;
 }
-
-#header .util .hamburger:hover span {
-    background: rgba(0, 0, 0, 0.5);
+#header .nav .gnb li a:hover { color: #1d4d9f; }
+#header .util { position: relative; height: 32px; }
+#header .util .lang {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #979797;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 350;
+}
+#header .util .lang.active { left: 57.02px; color: #000; }
+#header .util .lang:not(.active) { left: 109.18px; }
+#header .util .hamburger {
+    position: absolute;
+    left: 148px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    padding: 5px 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+#header .hamburger img { display: block; width: 32px; height: 22px; }
+#header a:focus-visible, #header button:focus-visible { outline: 2px solid #1d4d9f; outline-offset: 4px; }
+#header.menu-open .nav {
+    position: absolute;
+    top: 91px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 8px 12px #00000012;
+}
+#header.menu-open .nav .gnb { max-width: 800px; margin: auto; }
+@media (max-width: 900px) {
+    #header .inner { grid-template-columns: 1fr 180px; padding: 0 24px; }
+    #header .nav { display: none; }
+    #header.menu-open .nav { display: block; }
+    #header.menu-open .nav .gnb { grid-template-columns: 1fr; }
+    #header .nav .gnb li a { padding: 16px 24px; }
 }
 
 /* ===================================

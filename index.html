@@ -32,26 +32,24 @@
                 <div class="inner">
                     <h1>
                         <a href="#">
-                            <img src="images/logo_pc.png" alt="경동" />
+                            <img src="images/nav-logo.png" alt="경동" width="110" height="47" />
                         </a>
                     </h1>
 
-                    <nav class="nav">
+                    <nav class="nav" id="primary-nav" aria-label="주 메뉴">
                         <ul class="gnb">
-                            <li><a href="#">회사소개</a></li>
-                            <li><a href="#">사업분야</a></li>
-                            <li><a href="#">기술혁신</a></li>
-                            <li><a href="#">홍보센터</a></li>
+                            <li><a href="#about">회사소개</a></li>
+                            <li><a href="#business">사업분야</a></li>
+                            <li><a href="#technology">기술혁신</a></li>
+                            <li><a href="#public">홍보센터</a></li>
                         </ul>
                     </nav>
 
                     <div class="util">
                         <a href="#" class="lang active">KOR</a>
                         <a href="#" class="lang">ENG</a>
-                        <button type="button" class="hamburger" aria-label="메뉴 열기">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <button type="button" class="hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-nav">
+                            <img src="images/nav-menu.png" alt="" width="32" height="22" />
                         </button>
                     </div>
                 </div>
