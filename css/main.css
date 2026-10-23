@@ -813,10 +813,6 @@
     transition: background 0.3s;
 }
 
-.main .about .about-list li.active {
-    background: rgba(235, 96, 14, 0.88);
-}
-
 .main .about .about-list li:hover {
     background: rgba(235, 96, 14, 0.88);
 }
